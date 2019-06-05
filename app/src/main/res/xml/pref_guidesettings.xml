@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:key="guide_image_process"
+        android:title="@string/pref_title_guide_image_process">
+
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="guide_image_threshold_otsu"
+            android:summary="@string/pref_summary_guide_image_threshold_otsu"
+            android:title="@string/pref_title_guide_image_threshold_otsu"
+            android:disableDependentsState="true"  />
+
+            <EditTextPreference
+                android:defaultValue="127"
+                android:inputType="phone"
+                android:digits="0123456789"
+                android:maxLength="3"
+                android:singleLine="true"
+                android:key="image_threshold_value"
+                android:summary="@string/pref_summary_image_threshold_value"
+                android:title="@string/pref_title_image_threshold_value"
+                android:dependency="guide_image_threshold_otsu"/>
+
+    </PreferenceCategory>
+
+
+    <PreferenceCategory
+        android:key="guide_panel"
+        android:title="@string/pref_title_guide_panel" >
+
+    <SwitchPreference
+        android:defaultValue="true"
+        android:key="guide_panel_split"
+        android:summary="@string/pref_summary_guide_panel_split"
+        android:title="@string/pref_title_guide_panel_split" />
+
+
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="guide_panel_split_manual"
+            android:summary="@string/pref_summary_guide_panel_split_manual"
+            android:title="@string/pref_title_guide_panel_split_manual" />
+
+            <EditTextPreference
+                android:defaultValue="40"
+                android:inputType="number"
+                android:maxLength="2"
+                android:singleLine="true"
+                android:key="panel_split_area"
+                android:dependency="guide_panel_split_manual"
+                android:summary="@string/pref_summary_guide_panel_split_area"
+                android:title="@string/pref_title_guide_panel_split_area" />
+
+            <EditTextPreference
+                android:defaultValue="2"
+                android:inputType="number"
+                android:maxLength="1"
+                android:singleLine="true"
+                android:key="panel_split_rows"
+                android:dependency="guide_panel_split_manual"
+                android:summary="@string/pref_summary_guide_panel_split_rows"
+                android:title="@string/pref_title_guide_panel_split_rows" />
+
+            <EditTextPreference
+                android:defaultValue="2"
+                android:inputType="number"
+                android:maxLength="1"
+                android:singleLine="true"
+                android:key="panel_split_cols"
+                android:dependency="guide_panel_split_manual"
+                android:summary="@string/pref_summary_guide_panel_split_cols"
+                android:title="@string/pref_title_guide_panel_split_cols" />
+
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="guide_panel_split_keep"
+            android:dependency="guide_panel_split"
+            android:summary="@string/pref_summary_guide_panel_split_keep"
+            android:title="@string/pref_title_guide_panel_split_keep" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="guide_sort"
+        android:title="@string/pref_title_guide_sort" >
+
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="guide_sort_four"
+            android:summary="@string/pref_summary_guide_sort_four"
+            android:title="@string/pref_title_guide_sort_four" />
+
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="guide_sort_four_merge"
+            android:dependency="guide_sort_four"
+            android:summary="@string/pref_summary_guide_sort_four_merge"
+            android:title="@string/pref_title_guide_sort_four_merge"/>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
